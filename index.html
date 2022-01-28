@@ -9,13 +9,14 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+        
     <title>Task Manager</title>
-
+    
 </head>
 
 <body class="mt-2">
-
+    <span id="date-element"></span> 
+      <!---<div class="d-flex justify-content-center my-5"></div>-->
     <!-- Add Task Modal -->
     <div class="modal fade" id="addTaskModal" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel"
         aria-hidden="true">
@@ -27,26 +28,36 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-
+               
                 <!-- Form Starts -->
-                <form>
+                <form id="new-task-form">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="newTaskName">Name</label>
                             <input type="text" class="form-control" id="newTaskName" placeholder="enter name...">
-                        </div>
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Please provide a valid name.</div>
+                    </div>
+                            </div>
+                        </div>                    
                         <div class="form-group">
                             <label for="newTaskDescription">Description</label>
                             <textarea class="form-control" id="newTaskDescription" rows="3"
                                 placeholder="enter description..."></textarea>
+                                <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Please provide a valid description.</div>
                         </div>
                         <div class="form-group">
                             <label for="newTaskAssignedTo">Assigned To</label>
                             <input type="text" class="form-control" id="newTaskAssignedTo" placeholder="enter name...">
-                        </div>
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Please provide a valid name.</div>
+                         </div>
                         <div class="form-group">
                             <label for="newTaskDueDate">Due Date</label>
                             <input type="date" class="form-control" id="newTaskDueDate" placeholder="dd/mm/yyyy">
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Please provide a valid date.</div>
                         </div>
                         <div class="form-group">
                             <label for="newTaskStatus">Status</label>
@@ -64,10 +75,18 @@
                     </div>
                 </form>
                 <!-- Form ends -->
+            <div class="task-list-container">
+              <h3 class="text-center">Tasks:</h3>
+            <div class="d-flex justify-content-center">
+                <ul class="list-group" id="task-list"></ul>
             </div>
+            </div>
+                 </div>
         </div>
     </div>
+   
     <!-- Add Task Modal Ends -->
+    
 
     <!-- Edit Task Modal Start-->
     <div class="modal fade" id="editTaskModal" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel"
@@ -83,24 +102,32 @@
                 </div>
 
                 <!-- Form starts-->
-                <form>
+                <form id = "editTaskModal">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="newTaskName">Name</label>
                             <input type="text" class="form-control" id="newTaskName" placeholder="enter name...">
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Please provide a valid name.</div>
                         </div>
                         <div class="form-group">
                             <label for="newTaskDescription">Description</label>
                             <textarea class="form-control" id="newTaskDescription" rows="3"
                                 placeholder="enter description..."></textarea>
+                                <div class="valid-feedback">Looks good!</div>
+                                <div class="invalid-feedback">Please provide a valid description.</div>
                         </div>
                         <div class="form-group">
                             <label for="newTaskAssignedTo">Assigned To</label>
                             <input type="text" class="form-control" id="newTaskAssignedTo" placeholder="enter name...">
-                        </div>
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Please provide a valid name.</div>
+                          </div>
                         <div class="form-group">
                             <label for="newTaskDueDate">Due Date</label>
                             <input type="date" class="form-control" id="newTaskDueDate" placeholder="dd/mm/yyyy">
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Please provide a valid date.</div>
                         </div>
                         <div class="form-group">
                             <label for="newTaskStatus">Status</label>
@@ -122,7 +149,7 @@
         </div>
     </div>
     <!-- Edit task modal End -->
-
+    
     <div class="container">
         <div class="row">
             <div class="col">
@@ -424,19 +451,29 @@
                 </div>
             </div>
 
-
+            
 
             <!-- Optional JavaScript -->
             <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            
+          
             <script src=" https://code.jquery.com/jquery-3.4.1.slim.min.js"
                 integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
                 crossorigin="anonymous"></script>
+            
             <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
                 integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
                 crossorigin="anonymous"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
                 integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
                 crossorigin="anonymous"></script>
+            <script src="./index.js"></script>    
+            <script src="./taskManager.js"></script>
+            
+                
+            
+           
+            
 </body>
 
 </html>
