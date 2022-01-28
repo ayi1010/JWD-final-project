@@ -1,8 +1,5 @@
 //Task6 starts
 const taskManager = new TaskManager(0);
-const aaaaa = taskManager
-console.log(aaaaa)
-
 
 // Task5: Finding and Display the Date Object starts
 const dateElement = document.querySelector("#date-element");
@@ -46,7 +43,6 @@ addTaskForm.addEventListener('submit', (event) => {
         // Add the task to the task manager
         taskManager.addTask(name, description, assignedTo, dueDate, status);
 
-        //reset the form and close the modal
         addTaskForm.reset();
         $('#addTaskModal').modal('hide')
     }
@@ -85,7 +81,6 @@ function isGreaterThan(value, length) {
 }
 
 function isGreaterThanToday(date) {
-    //Obtained formula from https://stackoverflow.com/questions/14781153/how-to-compare-two-string-dates-in-javascript/42760898
     const todayDate = new Date().setHours(0, 0, 0, 0);
     return Date.parse(date) >= todayDate
 }
