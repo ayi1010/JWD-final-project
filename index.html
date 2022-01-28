@@ -11,7 +11,15 @@
 
 </head>
 
-<body class="mt-2">
+<body>
+    <!-- Current Date Starts -->
+    <nav class="navbar navbar-light bg-light sticky-top">
+        <div class="container">
+            <span id="date-element" class="navbar-text border border-secondary rounded p-1">
+            </span>
+        </div>
+    </nav>
+    <!-- Current Date Ends -->
 
     <!-- Add Task Modal -->
     <div class="modal fade" id="addTaskModal" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel"
@@ -26,33 +34,52 @@
                 </div>
 
                 <!-- Form Starts -->
-                <form>
+                <form id="addToDo" class="needs-validation" novalidate>
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="newTaskName">Name</label>
-                            <input type="text" class="form-control" id="newTaskName" placeholder="enter name...">
+                            <input type="text" class="form-control" id="newTaskName" placeholder="enter name..."
+                                required>
+                            <div class="invalid-feedback">
+                                Please provide a valid name.
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="newTaskDescription">Description</label>
                             <textarea class="form-control" id="newTaskDescription" rows="3"
-                                placeholder="enter description..."></textarea>
+                                placeholder="enter description..." required></textarea>
+                            <div class="invalid-feedback">
+                                Please provide a valid description.
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="newTaskAssignedTo">Assigned To</label>
-                            <input type="text" class="form-control" id="newTaskAssignedTo" placeholder="enter name...">
+                            <input type="text" class="form-control" id="newTaskAssignedTo" placeholder="enter name..."
+                                required>
+                            <div class="invalid-feedback">
+                                Please provide a valid assigned to.
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="newTaskDueDate">Due Date</label>
-                            <input type="date" class="form-control" id="newTaskDueDate" placeholder="dd/mm/yyyy">
+                            <input type="date" class="form-control" id="newTaskDueDate" placeholder="dd/mm/yyyy"
+                                required>
+                            <div class="invalid-feedback">
+                                Please provide a valid due date.
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="newTaskStatus">Status</label>
                             <select class="form-control" id="newTaskStatus">
-                                <option>TO DO</option>
-                                <option>IN PROGRESS</option>
-                                <option>REVIEW</option>
-                                <option>DONE</option>
+                                <option value=''>--Please choose an option--</option>
+                                <option value='toDo'>TO DO</option>
+                                <option value='inProgress'>IN PROGRESS</option>
+                                <option value='review'>REVIEW</option>
+                                <option value='done'>DONE</option>
                             </select>
+                            <div class="invalid-feedback">
+                                Please provide a valid status.
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -80,32 +107,36 @@
                 </div>
 
                 <!-- Form starts-->
-                <form>
+                <form id="editToDo" class="needs-validation" novalidate>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="newTaskName">Name</label>
-                            <input type="text" class="form-control" id="newTaskName" placeholder="enter name...">
+                            <label for="editTaskName">Name</label>
+                            <input type="text" class="form-control" id="editTaskName" placeholder="enter name..."
+                                required>
                         </div>
                         <div class="form-group">
-                            <label for="newTaskDescription">Description</label>
-                            <textarea class="form-control" id="newTaskDescription" rows="3"
-                                placeholder="enter description..."></textarea>
+                            <label for="editTaskDescription">Description</label>
+                            <textarea class="form-control" id="editTaskDescription" rows="3"
+                                placeholder="enter description..." required></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="newTaskAssignedTo">Assigned To</label>
-                            <input type="text" class="form-control" id="newTaskAssignedTo" placeholder="enter name...">
+                            <label for="editTaskAssignedTo">Assigned To</label>
+                            <input type="text" class="form-control" id="editTaskAssignedTo" placeholder="enter name..."
+                                required>
                         </div>
                         <div class="form-group">
-                            <label for="newTaskDueDate">Due Date</label>
-                            <input type="date" class="form-control" id="newTaskDueDate" placeholder="dd/mm/yyyy">
+                            <label for="editTaskDueDate">Due Date</label>
+                            <input type="date" class="form-control" id="editTaskDueDate" placeholder="dd/mm/yyyy"
+                                required>
                         </div>
                         <div class="form-group">
-                            <label for="newTaskStatus">Status</label>
-                            <select class="form-control" id="newTaskStatus">
-                                <option>TO DO</option>
-                                <option>IN PROGRESS</option>
-                                <option>REVIEW</option>
-                                <option>DONE</option>
+                            <label for="editTaskStatus">Status</label>
+                            <select class="form-control" id="editTaskStatus">
+                                <option value=''>--Please choose an option--</option>
+                                <option value='toDo'>TO DO</option>
+                                <option value='inProgress'>IN PROGRESS</option>
+                                <option value='review'>REVIEW</option>
+                                <option value='done'>DONE</option>
                             </select>
                         </div>
                     </div>
@@ -120,7 +151,7 @@
     </div>
     <!-- Edit task modal End -->
 
-    <div class="container">
+    <div class="container mt-2">
         <div class="row">
             <div class="col">
                 <!-- Nav tab starts here -->
@@ -166,16 +197,16 @@
                                         <div class="card h-100">
                                             <div class="card-body">
                                                 <p class="card-text">
-                                                    <ul class="list-group-item-text">
-                                                        <li class="font-weight-bold">Description</li>
-                                                        <p>Description of Task 1</p>
-                                                        <li class="font-weight-bold">Assign To</li>
-                                                        <p>Bob Brown</p>
-                                                        <li class="font-weight-bold">Due Date</li>
-                                                        <p>20/12/2021</p>
-                                                        <li class="font-weight-bold">Status</li>
-                                                        <p>To Do</p>
-                                                    </ul>
+                                                <ul class="list-group-item-text">
+                                                    <li class="font-weight-bold">Description</li>
+                                                    <p>Description of Task 1</p>
+                                                    <li class="font-weight-bold">Assign To</li>
+                                                    <p>Bob Brown</p>
+                                                    <li class="font-weight-bold">Due Date</li>
+                                                    <p>20/12/2021</p>
+                                                    <li class="font-weight-bold">Status</li>
+                                                    <p>To Do</p>
+                                                </ul>
                                                 </p>
                                                 <div class="d-flex justify-content-end">
                                                     <button type="button" class="btn btn-success btn-sm mr-1"
@@ -196,16 +227,16 @@
                                         <div class="card h-100">
                                             <div class="card-body">
                                                 <p class="card-text">
-                                                    <ul class="list-group-item-text">
-                                                        <li class="font-weight-bold">Description</li>
-                                                        <p>Description of Task 2</p>
-                                                        <li class="font-weight-bold">Assign To</li>
-                                                        <p>Bob Brown</p>
-                                                        <li class="font-weight-bold">Due Date</li>
-                                                        <p>20/12/2021</p>
-                                                        <li class="font-weight-bold">Status</li>
-                                                        <p>To Do</p>
-                                                    </ul>
+                                                <ul class="list-group-item-text">
+                                                    <li class="font-weight-bold">Description</li>
+                                                    <p>Description of Task 2</p>
+                                                    <li class="font-weight-bold">Assign To</li>
+                                                    <p>Bob Brown</p>
+                                                    <li class="font-weight-bold">Due Date</li>
+                                                    <p>20/12/2021</p>
+                                                    <li class="font-weight-bold">Status</li>
+                                                    <p>To Do</p>
+                                                </ul>
                                                 </p>
                                                 <div class="d-flex justify-content-end">
                                                     <button type="button" class="btn btn-success btn-sm mr-1"
@@ -226,16 +257,16 @@
                                         <div class="card h-100">
                                             <div class="card-body">
                                                 <p class="card-text">
-                                                    <ul class="list-group-item-text">
-                                                        <li class="font-weight-bold">Description</li>
-                                                        <p>Description of Task 3</p>
-                                                        <li class="font-weight-bold">Assign To</li>
-                                                        <p>Bob Brown</p>
-                                                        <li class="font-weight-bold">Due Date</li>
-                                                        <p>20/12/2021</p>
-                                                        <li class="font-weight-bold">Status</li>
-                                                        <p>To Do</p>
-                                                    </ul>
+                                                <ul class="list-group-item-text">
+                                                    <li class="font-weight-bold">Description</li>
+                                                    <p>Description of Task 3</p>
+                                                    <li class="font-weight-bold">Assign To</li>
+                                                    <p>Bob Brown</p>
+                                                    <li class="font-weight-bold">Due Date</li>
+                                                    <p>20/12/2021</p>
+                                                    <li class="font-weight-bold">Status</li>
+                                                    <p>To Do</p>
+                                                </ul>
                                                 </p>
                                                 <div class="d-flex justify-content-end">
                                                     <button type="button" class="btn btn-success btn-sm mr-1"
@@ -256,16 +287,16 @@
                                         <div class="card h-100">
                                             <div class="card-body">
                                                 <p class="card-text">
-                                                    <ul class="list-group-item-text">
-                                                        <li class="font-weight-bold">Description</li>
-                                                        <p>Description of Task 4</p>
-                                                        <li class="font-weight-bold">Assign To</li>
-                                                        <p>Bob Brown</p>
-                                                        <li class="font-weight-bold">Due Date</li>
-                                                        <p>20/12/2021</p>
-                                                        <li class="font-weight-bold">Status</li>
-                                                        <p>To Do</p>
-                                                    </ul>
+                                                <ul class="list-group-item-text">
+                                                    <li class="font-weight-bold">Description</li>
+                                                    <p>Description of Task 4</p>
+                                                    <li class="font-weight-bold">Assign To</li>
+                                                    <p>Bob Brown</p>
+                                                    <li class="font-weight-bold">Due Date</li>
+                                                    <p>20/12/2021</p>
+                                                    <li class="font-weight-bold">Status</li>
+                                                    <p>To Do</p>
+                                                </ul>
                                                 </p>
                                                 <div class="d-flex justify-content-end">
                                                     <button type="button" class="btn btn-success btn-sm mr-1"
@@ -304,16 +335,16 @@
                                         <div class="card h-100">
                                             <div class="card-body">
                                                 <p class="card-text">
-                                                    <ul class="list-group-item-text">
-                                                        <li class="font-weight-bold">Description</li>
-                                                        <p>Description of Task 5</p>
-                                                        <li class="font-weight-bold">Assign To</li>
-                                                        <p>Bob Brown</p>
-                                                        <li class="font-weight-bold">Due Date</li>
-                                                        <p>20/12/2021</p>
-                                                        <li class="font-weight-bold">Status</li>
-                                                        <p>In Progress</p>
-                                                    </ul>
+                                                <ul class="list-group-item-text">
+                                                    <li class="font-weight-bold">Description</li>
+                                                    <p>Description of Task 5</p>
+                                                    <li class="font-weight-bold">Assign To</li>
+                                                    <p>Bob Brown</p>
+                                                    <li class="font-weight-bold">Due Date</li>
+                                                    <p>20/12/2021</p>
+                                                    <li class="font-weight-bold">Status</li>
+                                                    <p>In Progress</p>
+                                                </ul>
                                                 </p>
                                                 <div class="d-flex justify-content-end">
                                                     <button type="button" class="btn btn-success btn-sm mr-1"
@@ -352,16 +383,16 @@
                                         <div class="card h-100">
                                             <div class="card-body">
                                                 <p class="card-text">
-                                                    <ul class="list-group-item-text">
-                                                        <li class="font-weight-bold">Description</li>
-                                                        <p>Description of Task 6</p>
-                                                        <li class="font-weight-bold">Assign To</li>
-                                                        <p>Bob Brown</p>
-                                                        <li class="font-weight-bold">Due Date</li>
-                                                        <p>20/12/2021</p>
-                                                        <li class="font-weight-bold">Status</li>
-                                                        <p>Review</p>
-                                                    </ul>
+                                                <ul class="list-group-item-text">
+                                                    <li class="font-weight-bold">Description</li>
+                                                    <p>Description of Task 6</p>
+                                                    <li class="font-weight-bold">Assign To</li>
+                                                    <p>Bob Brown</p>
+                                                    <li class="font-weight-bold">Due Date</li>
+                                                    <p>20/12/2021</p>
+                                                    <li class="font-weight-bold">Status</li>
+                                                    <p>Review</p>
+                                                </ul>
                                                 </p>
                                                 <div class="d-flex justify-content-end">
                                                     <button type="button" class="btn btn-success btn-sm mr-1"
@@ -393,16 +424,16 @@
                                         <div class="card h-100">
                                             <div class="card-body">
                                                 <p class="card-text">
-                                                    <ul class="list-group-item-text">
-                                                        <li class="font-weight-bold">Description</li>
-                                                        <p>Description of Task 6</p>
-                                                        <li class="font-weight-bold">Assign To</li>
-                                                        <p>Bob Brown</p>
-                                                        <li class="font-weight-bold">Due Date</li>
-                                                        <p>20/12/2021</p>
-                                                        <li class="font-weight-bold">Status</li>
-                                                        <p>Done</p>
-                                                    </ul>
+                                                <ul class="list-group-item-text">
+                                                    <li class="font-weight-bold">Description</li>
+                                                    <p>Description of Task 6</p>
+                                                    <li class="font-weight-bold">Assign To</li>
+                                                    <p>Bob Brown</p>
+                                                    <li class="font-weight-bold">Due Date</li>
+                                                    <p>20/12/2021</p>
+                                                    <li class="font-weight-bold">Status</li>
+                                                    <p>Done</p>
+                                                </ul>
                                                 </p>
                                                 <div class="d-flex justify-content-end">
                                                     <button type="button" class="btn btn-success btn-sm mr-1"
@@ -434,6 +465,9 @@
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
                 integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
                 crossorigin="anonymous"></script>
+
+            <script src="js/taskManager.js"></script>
+            <script src="js/index.js"></script>
 </body>
 
 </html>
