@@ -6,7 +6,7 @@ const dateElement = document.querySelector("#date-element");
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 let today = new Date();
 const [day, month, year] = [today.getDate(), today.getMonth(), today.getFullYear()];
-let dateString = `Today: ${day} / ${monthNames[month]} / ${year}`;
+let dateString = `Today: ${day} ${monthNames[month]} ${year}`;
 dateElement.innerHTML = dateString;
 // Task5: Finding and Display the Date Object ends
 
