@@ -12,14 +12,20 @@
 </head>
 
 <body>
-    <!-- Current Date Starts -->
+    <!-- Current Date & Add Button Starts -->
     <nav class="navbar navbar-light bg-light sticky-top">
         <div class="container">
             <span id="date-element" class="navbar-text border border-secondary rounded p-1">
             </span>
+            <div>
+                <button type="button" class="btn btn-primary rounded-circle" data-toggle="modal"
+                    data-target="#addTaskModal">
+                    <span>+</span>
+                </button>
+            </div>
         </div>
     </nav>
-    <!-- Current Date Ends -->
+    <!-- Current Date & Add Button Ends -->
 
     <!-- Add Task Modal -->
     <div class="modal fade" id="addTaskModal" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel"
@@ -155,7 +161,7 @@
         <div class="row">
             <div class="col">
                 <!-- Nav tab starts here -->
-                <ul class="nav nav-tabs" role="tablist">
+                <ul class="nav nav-tabs mb-3" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" data-toggle="tab" href="#toDotab" role="tab">To Do</a>
                     </li>
@@ -175,18 +181,10 @@
                 <div class="tab-content">
                     <!-- To Do tab starts -->
                     <div class="tab-pane active" id="toDotab" role="tabpanel">
-                        <!-- Add Button -->
-                        <div class="d-flex justify-content-end mt-2 mb-2">
-                            <button type="button" class="btn btn-primary rounded-circle" data-toggle="modal"
-                                data-target="#addTaskModal">
-                                <span>+</span>
-                            </button>
-                        </div>
-
                         <!-- Accordion Using List Group starts-->
                         <div class="col-md-12 col-md-offset-3">
                             <div id="accordion">
-                                <div class="panel list-group">
+                                <div class="panel list-group" id="toDoList">
 
                                     <!-- Task 1 starts -->
                                     <a href="#taskI" data-parent="#accordion" data-toggle="collapse"
@@ -315,18 +313,11 @@
 
                     <!-- In Progress tab starts -->
                     <div class="tab-pane" id="inProgresstab" role="tabpanel">
-                        <!-- Add Button -->
-                        <div class="d-flex justify-content-end mt-2">
-                            <button type="button" class="btn btn-primary rounded-circle" data-toggle="modal"
-                                data-target="#addTaskModal">
-                                <span>+</span>
-                            </button>
-                        </div>
-
-                        <!-- Task 5 Starts -->
                         <div class="col-md-12 col-md-offset-3">
                             <div id="accordionInProgress">
-                                <div class="panel list-group">
+                                <div class="panel list-group" id="inProgressList">
+
+                                    <!-- Task 5 Starts -->
                                     <a href="#taskV" data-parent="#accordionInProgress" data-toggle="collapse"
                                         class="list-group-item d-flex text-decoration-none mt-3">
                                         <h6 class="flex-grow-1">Task V</h6>
@@ -354,27 +345,22 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- Task 5 Ends -->
                                 </div>
                             </div>
                         </div>
-                        <!-- Task 5 Ends -->
+
                     </div>
                     <!-- In Progress tab ends -->
 
                     <!-- Reivew tab starts -->
                     <div class="tab-pane" id="reviewtab" role="tabpanel">
-                        <!-- Add Button -->
-                        <div class="d-flex justify-content-end mt-2">
-                            <button type="button" class="btn btn-primary rounded-circle" data-toggle="modal"
-                                data-target="#addTaskModal">
-                                <span>+</span>
-                            </button>
-                        </div>
 
-                        <!-- Task 6 Starts -->
+
                         <div class="col-md-12 col-md-offset-3">
                             <div id="accordionReview">
-                                <div class="panel list-group">
+                                <div class="panel list-group" id="reviewList">
+                                    <!-- Task 6 Starts -->
                                     <a href="#taskVI" data-parent="#accordionReview" data-toggle="collapse"
                                         class="list-group-item d-flex text-decoration-none mt-3">
                                         <h6 class="flex-grow-1">Task VI</h6>
@@ -402,20 +388,21 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- Task 6 Ends -->
                                 </div>
                             </div>
                         </div>
-                        <!-- Task 6 Ends -->
+
                     </div>
                     <!-- Review tab ends -->
 
                     <!-- Done tab starts -->
                     <div class="tab-pane" id="donetab" role="tabpanel">
 
-                        <!-- Task 7 Starts  -->
                         <div class="col-md-12 col-md-offset-3">
                             <div id="accordionDone">
-                                <div class="panel list-group">
+                                <div class="panel list-group" id="doneList">
+                                    <!-- Task 7 Starts  -->
                                     <a href="#taskVII" data-parent="#accordionDone" data-toggle="collapse"
                                         class="list-group-item d-flex text-decoration-none mt-3">
                                         <h6 class="flex-grow-1">Task VII</h6>

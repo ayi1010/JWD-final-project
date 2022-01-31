@@ -42,9 +42,10 @@ addTaskForm.addEventListener('submit', (event) => {
 
         // Add the task to the task manager
         taskManager.addTask(name, description, assignedTo, dueDate, status);
-
-        addTaskForm.reset();
+        taskManager.render()
+        addTaskForm.reset()
         $('#addTaskModal').modal('hide')
+        $('.is-valid').removeClass('is-valid')
     }
 })
 
