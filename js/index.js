@@ -71,6 +71,13 @@ editTaskForm.addEventListener('submit', (event) => {
         editTaskForm.reset();
         $('#editTaskModal').modal('hide')
     }
+
+    if (isValid) {
+        //come back to it later
+        editTaskForm.reset()
+        $('#editTaskModal').modal('hide')
+        $('.is-valid').removeClass('is-valid')
+    }
 })
 
 function isNotEmpty(value) {
