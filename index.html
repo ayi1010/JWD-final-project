@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="./css/style.css">
+
     <title>Task Manager</title>
 
 </head>
@@ -47,7 +49,8 @@
                             <input type="text" class="form-control" id="newTaskName" placeholder="enter name..."
                                 required>
                             <div class="invalid-feedback">
-                                Please provide a valid name.
+                                Please provide a valid name <br>
+                                (Name has to be more than 5 characters)
                             </div>
                         </div>
                         <div class="form-group">
@@ -55,7 +58,8 @@
                             <textarea class="form-control" id="newTaskDescription" rows="3"
                                 placeholder="enter description..." required></textarea>
                             <div class="invalid-feedback">
-                                Please provide a valid description.
+                                Please provide a valid description <br>
+                                (Description has to be more than 5 characters)
                             </div>
                         </div>
                         <div class="form-group">
@@ -63,7 +67,8 @@
                             <input type="text" class="form-control" id="newTaskAssignedTo" placeholder="enter name..."
                                 required>
                             <div class="invalid-feedback">
-                                Please provide a valid assigned to.
+                                Please provide a valid assigned to <br>
+                                (Assigned To has to be more than 5 characters)
                             </div>
                         </div>
                         <div class="form-group">
@@ -71,7 +76,8 @@
                             <input type="date" class="form-control" id="newTaskDueDate" placeholder="dd/mm/yyyy"
                                 required>
                             <div class="invalid-feedback">
-                                Please provide a valid due date.
+                                Please provide a valid due date <br>
+                                (Date can not be empty and has to be equal or greater than today)
                             </div>
                         </div>
                         <div class="form-group">
@@ -84,7 +90,8 @@
                                 <option value='done'>DONE</option>
                             </select>
                             <div class="invalid-feedback">
-                                Please provide a valid status.
+                                Please provide a valid status <br>
+                                (Status can not be empty)
                             </div>
                         </div>
                     </div>
@@ -119,21 +126,37 @@
                             <label for="editTaskName">Name</label>
                             <input type="text" class="form-control" id="editTaskName" placeholder="enter name..."
                                 required>
+                            <div class="invalid-feedback">
+                                Please provide a valid name <br>
+                                (Name has to be more than 5 characters)
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="editTaskDescription">Description</label>
                             <textarea class="form-control" id="editTaskDescription" rows="3"
                                 placeholder="enter description..." required></textarea>
+                            <div class="invalid-feedback">
+                                Please provide a valid description <br>
+                                (Description has to be more than 5 characters)
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="editTaskAssignedTo">Assigned To</label>
                             <input type="text" class="form-control" id="editTaskAssignedTo" placeholder="enter name..."
                                 required>
+                            <div class="invalid-feedback">
+                                Please provide a valid assigned to <br>
+                                (Assigned To has to be more than 5 characters)
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="editTaskDueDate">Due Date</label>
                             <input type="date" class="form-control" id="editTaskDueDate" placeholder="dd/mm/yyyy"
                                 required>
+                            <div class="invalid-feedback">
+                                Please provide a valid due date <br>
+                                (Date can not be empty and has to be equal or greater than today)
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="editTaskStatus">Status</label>
@@ -144,6 +167,10 @@
                                 <option value='review'>REVIEW</option>
                                 <option value='done'>DONE</option>
                             </select>
+                            <div class="invalid-feedback">
+                                Please provide a valid status <br>
+                                (Status can not be empty)
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -185,126 +212,7 @@
                         <div class="col-md-12 col-md-offset-3">
                             <div id="accordion">
                                 <div class="panel list-group" id="toDoList">
-
-                                    <!-- Task 1 starts -->
-                                    <a href="#taskI" data-parent="#accordion" data-toggle="collapse"
-                                        class="list-group-item d-flex text-decoration-none">
-                                        <h6 class="flex-grow-1">Task I</h6>
-                                    </a>
-                                    <div class="collapse" id="taskI">
-                                        <div class="card h-100">
-                                            <div class="card-body">
-                                                <p class="card-text">
-                                                <ul class="list-group-item-text">
-                                                    <li class="font-weight-bold">Description</li>
-                                                    <p>Description of Task 1</p>
-                                                    <li class="font-weight-bold">Assign To</li>
-                                                    <p>Bob Brown</p>
-                                                    <li class="font-weight-bold">Due Date</li>
-                                                    <p>20/12/2021</p>
-                                                    <li class="font-weight-bold">Status</li>
-                                                    <p>To Do</p>
-                                                </ul>
-                                                </p>
-                                                <div class="d-flex justify-content-end">
-                                                    <button type="button" class="btn btn-success btn-sm mr-1"
-                                                        data-toggle="modal" data-target="#editTaskModal">EDIT</button>
-                                                    <button type="button" class="btn btn-danger btn-sm">DELETE</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Task 1 ends -->
-
-                                    <!-- Task 2 starts -->
-                                    <a href="#taskII" data-parent="#accordion" data-toggle="collapse"
-                                        class="list-group-item d-flex text-decoration-none">
-                                        <h6 class="flex-grow-1">Task II</h6>
-                                    </a>
-                                    <div class="collapse" id="taskII">
-                                        <div class="card h-100">
-                                            <div class="card-body">
-                                                <p class="card-text">
-                                                <ul class="list-group-item-text">
-                                                    <li class="font-weight-bold">Description</li>
-                                                    <p>Description of Task 2</p>
-                                                    <li class="font-weight-bold">Assign To</li>
-                                                    <p>Bob Brown</p>
-                                                    <li class="font-weight-bold">Due Date</li>
-                                                    <p>20/12/2021</p>
-                                                    <li class="font-weight-bold">Status</li>
-                                                    <p>To Do</p>
-                                                </ul>
-                                                </p>
-                                                <div class="d-flex justify-content-end">
-                                                    <button type="button" class="btn btn-success btn-sm mr-1"
-                                                        data-toggle="modal" data-target="#editTaskModal">EDIT</button>
-                                                    <button type="button" class="btn btn-danger btn-sm">DELETE</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Task 2 ends -->
-
-                                    <!-- Task 3 Starts -->
-                                    <a href="#taskIII" data-parent="#accordion" data-toggle="collapse"
-                                        class="list-group-item d-flex text-decoration-none">
-                                        <h6 class="flex-grow-1">Task III</h6>
-                                    </a>
-                                    <div class="collapse" id="taskIII">
-                                        <div class="card h-100">
-                                            <div class="card-body">
-                                                <p class="card-text">
-                                                <ul class="list-group-item-text">
-                                                    <li class="font-weight-bold">Description</li>
-                                                    <p>Description of Task 3</p>
-                                                    <li class="font-weight-bold">Assign To</li>
-                                                    <p>Bob Brown</p>
-                                                    <li class="font-weight-bold">Due Date</li>
-                                                    <p>20/12/2021</p>
-                                                    <li class="font-weight-bold">Status</li>
-                                                    <p>To Do</p>
-                                                </ul>
-                                                </p>
-                                                <div class="d-flex justify-content-end">
-                                                    <button type="button" class="btn btn-success btn-sm mr-1"
-                                                        data-toggle="modal" data-target="#editTaskModal">EDIT</button>
-                                                    <button type="button" class="btn btn-danger btn-sm">DELETE</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Task 3 Ends -->
-
-                                    <!-- Task 4 Starts -->
-                                    <a href="#taskIV" data-parent="#accordion" data-toggle="collapse"
-                                        class="list-group-item d-flex text-decoration-none">
-                                        <h6 class="flex-grow-1">Task IV</h6>
-                                    </a>
-                                    <div class="collapse" id="taskIV">
-                                        <div class="card h-100">
-                                            <div class="card-body">
-                                                <p class="card-text">
-                                                <ul class="list-group-item-text">
-                                                    <li class="font-weight-bold">Description</li>
-                                                    <p>Description of Task 4</p>
-                                                    <li class="font-weight-bold">Assign To</li>
-                                                    <p>Bob Brown</p>
-                                                    <li class="font-weight-bold">Due Date</li>
-                                                    <p>20/12/2021</p>
-                                                    <li class="font-weight-bold">Status</li>
-                                                    <p>To Do</p>
-                                                </ul>
-                                                </p>
-                                                <div class="d-flex justify-content-end">
-                                                    <button type="button" class="btn btn-success btn-sm mr-1"
-                                                        data-toggle="modal" data-target="#editTaskModal">EDIT</button>
-                                                    <button type="button" class="btn btn-danger btn-sm">DELETE</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Task 4 Ends -->
+                                    <!-- Insert Tasks -->
                                 </div>
                             </div>
                         </div>
@@ -316,36 +224,7 @@
                         <div class="col-md-12 col-md-offset-3">
                             <div id="accordionInProgress">
                                 <div class="panel list-group" id="inProgressList">
-
-                                    <!-- Task 5 Starts -->
-                                    <a href="#taskV" data-parent="#accordionInProgress" data-toggle="collapse"
-                                        class="list-group-item d-flex text-decoration-none mt-3">
-                                        <h6 class="flex-grow-1">Task V</h6>
-                                    </a>
-                                    <div class="collapse" id="taskV">
-                                        <div class="card h-100">
-                                            <div class="card-body">
-                                                <p class="card-text">
-                                                <ul class="list-group-item-text">
-                                                    <li class="font-weight-bold">Description</li>
-                                                    <p>Description of Task 5</p>
-                                                    <li class="font-weight-bold">Assign To</li>
-                                                    <p>Bob Brown</p>
-                                                    <li class="font-weight-bold">Due Date</li>
-                                                    <p>20/12/2021</p>
-                                                    <li class="font-weight-bold">Status</li>
-                                                    <p>In Progress</p>
-                                                </ul>
-                                                </p>
-                                                <div class="d-flex justify-content-end">
-                                                    <button type="button" class="btn btn-success btn-sm mr-1"
-                                                        data-toggle="modal" data-target="#editTaskModal">EDIT</button>
-                                                    <button type="button" class="btn btn-danger btn-sm">DELETE</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Task 5 Ends -->
+                                    <!-- Insert Taks -->
                                 </div>
                             </div>
                         </div>
@@ -355,82 +234,22 @@
 
                     <!-- Reivew tab starts -->
                     <div class="tab-pane" id="reviewtab" role="tabpanel">
-
-
                         <div class="col-md-12 col-md-offset-3">
                             <div id="accordionReview">
                                 <div class="panel list-group" id="reviewList">
-                                    <!-- Task 6 Starts -->
-                                    <a href="#taskVI" data-parent="#accordionReview" data-toggle="collapse"
-                                        class="list-group-item d-flex text-decoration-none mt-3">
-                                        <h6 class="flex-grow-1">Task VI</h6>
-                                    </a>
-                                    <div class="collapse" id="taskVI">
-                                        <div class="card h-100">
-                                            <div class="card-body">
-                                                <p class="card-text">
-                                                <ul class="list-group-item-text">
-                                                    <li class="font-weight-bold">Description</li>
-                                                    <p>Description of Task 6</p>
-                                                    <li class="font-weight-bold">Assign To</li>
-                                                    <p>Bob Brown</p>
-                                                    <li class="font-weight-bold">Due Date</li>
-                                                    <p>20/12/2021</p>
-                                                    <li class="font-weight-bold">Status</li>
-                                                    <p>Review</p>
-                                                </ul>
-                                                </p>
-                                                <div class="d-flex justify-content-end">
-                                                    <button type="button" class="btn btn-success btn-sm mr-1"
-                                                        data-toggle="modal" data-target="#editTaskModal">EDIT</button>
-                                                    <button type="button" class="btn btn-danger btn-sm">DELETE</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Task 6 Ends -->
+                                    <!-- Insert Tasks-->
                                 </div>
                             </div>
                         </div>
-
                     </div>
                     <!-- Review tab ends -->
 
                     <!-- Done tab starts -->
                     <div class="tab-pane" id="donetab" role="tabpanel">
-
                         <div class="col-md-12 col-md-offset-3">
                             <div id="accordionDone">
                                 <div class="panel list-group" id="doneList">
-                                    <!-- Task 7 Starts  -->
-                                    <a href="#taskVII" data-parent="#accordionDone" data-toggle="collapse"
-                                        class="list-group-item d-flex text-decoration-none mt-3">
-                                        <h6 class="flex-grow-1">Task VII</h6>
-                                    </a>
-                                    <div class="collapse" id="taskVII">
-                                        <div class="card h-100">
-                                            <div class="card-body">
-                                                <p class="card-text">
-                                                <ul class="list-group-item-text">
-                                                    <li class="font-weight-bold">Description</li>
-                                                    <p>Description of Task 6</p>
-                                                    <li class="font-weight-bold">Assign To</li>
-                                                    <p>Bob Brown</p>
-                                                    <li class="font-weight-bold">Due Date</li>
-                                                    <p>20/12/2021</p>
-                                                    <li class="font-weight-bold">Status</li>
-                                                    <p>Done</p>
-                                                </ul>
-                                                </p>
-                                                <div class="d-flex justify-content-end">
-                                                    <button type="button" class="btn btn-success btn-sm mr-1"
-                                                        data-toggle="modal" data-target="#editTaskModal">EDIT</button>
-                                                    <button type="button" class="btn btn-danger btn-sm">DELETE</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Task 7 Ends -->
+                                    <!-- Insert Tasks  -->
                                 </div>
                             </div>
                         </div>
@@ -438,8 +257,6 @@
                     <!-- Done tab ends -->
                 </div>
             </div>
-
-
 
             <!-- Optional JavaScript -->
             <!-- jQuery first, then Popper.js, then Bootstrap JS -->
