@@ -1,18 +1,18 @@
-//Task6 starts
-const taskManager = new TaskManager(0);
+//Initiate, load and render the data
+const taskManager = new TaskManager();
+taskManager.load()
+taskManager.render()
 
-// Task5: Finding and Display the Date Object starts
+// Find and Display the Date Object starts
 const dateElement = document.querySelector("#date-element");
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 let today = new Date();
 const [day, month, year] = [today.getDate(), today.getMonth(), today.getFullYear()];
 let dateString = `Today: ${day} ${monthNames[month]} ${year}`;
 dateElement.innerHTML = dateString;
-// Task5: Finding and Display the Date Object ends
 
-// Task4: Form validation starts
+// Form validation
 const addTaskForm = document.querySelector('#addToDo');
-const editTaskForm = document.querySelector('#editToDo');
 
 addTaskForm.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -43,39 +43,10 @@ addTaskForm.addEventListener('submit', (event) => {
         // Add the task to the task manager
         taskManager.addTask(name, description, assignedTo, dueDate, status);
         taskManager.render()
+        taskManager.save()
+
         addTaskForm.reset()
         $('#addTaskModal').modal('hide')
-        $('.is-valid').removeClass('is-valid')
-    }
-})
-
-editTaskForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-
-    const editTaskName = document.querySelector('#editTaskName');
-    const editTaskDescription = document.querySelector('#editTaskDescription');
-    const editTaskAssignedTo = document.querySelector('#editTaskAssignedTo');
-    const editTaskDueDate = document.querySelector('#editTaskDueDate');
-    const editTaskStatus = document.querySelector('#editTaskStatus');
-
-    console.log("Task Name :" + editTaskName.value.length);
-    console.log("Task Description :" + editTaskDescription.value.length);
-    console.log("Task Assigned To :" + editTaskAssignedTo.value.length);
-    console.log("Task Due Date :" + editTaskDueDate.value);
-    console.log("Task Status:" + editTaskStatus.value);
-
-    const isValid = validateTaskForm(editTaskName, editTaskDescription, editTaskAssignedTo, editTaskDueDate, editTaskStatus);
-
-    if (isValid) {
-        editTaskForm.reset();
-        $('#editTaskModal').modal('hide')
-    }
-
-    if (isValid) {
-        //come back to it later
-        editTaskForm.reset()
-        $('#editTaskModal').modal('hide')
         $('.is-valid').removeClass('is-valid')
     }
 })
@@ -137,6 +108,31 @@ function validateTaskForm(name, description, assignedTo, dueDate, status) {
     }
     return nameIsValid && descriptionIsValid && assignedToIsValid && dueDateIsValid && statusIsValid
 }
-// Task4: Form validation ends
+
+// As we have multiple task lists we get the tab content to ensure all task lists are cater for.
+const tabContainer = document.querySelector('.tab-content');
+
+tabContainer.addEventListener('click', function (event) {
+    if (event.target.classList.contains('done-button')) {
+        const parentTask = event.target.parentElement.parentElement.parentElement.parentElement.parentElement
+        const taskId = Number(parentTask.dataset.taskId)
+        const task = taskManager.getTaskById(taskId)
+        task.status = "DONE"
+
+        taskManager.save()
+        taskManager.render()
+    }
+    if (event.target.classList.contains('delete-button')) {
+        const parentTask = event.target.parentElement.parentElement.parentElement.parentElement.parentElement
+        const taskId = Number(parentTask.dataset.taskId)
+        taskManager.deleteTask(taskId);
+
+        taskManager.save()
+        taskManager.render()
+    }
+})
+
+
+
 
 
