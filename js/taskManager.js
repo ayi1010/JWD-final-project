@@ -4,7 +4,7 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
             <a href="#task${id}" data-parent="#accordion" data-toggle="collapse" class="list-group-item d-flex text-decoration-none">
                 <h6 class="flex-grow-1">Task: ${name}</h6>
             </a>
-            <div class="collapse" id="task${id}">
+            <div class="collapse multi-collapse" id="task${id}">
                 <div class="card h-100">
                     <div class="card-body">
                         <p class="card-text">

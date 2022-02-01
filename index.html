@@ -16,14 +16,16 @@
 <body>
     <!-- Current Date & Add Button Starts -->
     <nav class="navbar navbar-light bg-light sticky-top">
-        <div class="container">
-            <span id="date-element" class="navbar-text border border-secondary rounded p-1">
+        <div class="container d-flex">
+            <span id="date-element" class="mr-auto navbar-text border border-secondary rounded p-1">
             </span>
             <div>
-                <button type="button" class="btn btn-primary border border-primary rounded" data-toggle="modal"
-                    data-target="#addTaskModal">
+                <button type="button" class="btn btn-sm btn-primary border border-primary rounded mr-2"
+                    data-toggle="modal" data-target="#addTaskModal">
                     + Add Task
                 </button>
+                <button type="button" class="btn  btn-sm btn-info border border-info rounded" id="toggleAccordion"
+                    data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false">Open All</button>
             </div>
         </div>
     </nav>

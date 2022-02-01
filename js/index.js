@@ -132,6 +132,21 @@ tabContainer.addEventListener('click', function (event) {
     }
 })
 
+// https://stackoverflow.com/questions/42834154/changing-bootstrap-button-text-on-toggle
+$('#toggleAccordion').on('click', function () {
+    let text = $('#toggleAccordion').text();
+    if (text === 'Open All') {
+        $(this).text('Close All');
+        $(this).removeClass("btn-info border-info")
+        $(this).addClass("btn-secondary border-secondary")
+    } else {
+        $(this).text('Open All');
+        $(this).removeClass("btn-secondary border-secondary")
+        $(this).addClass("btn-info border-info")
+    }
+});
+
+
 
 
 
