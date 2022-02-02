@@ -136,10 +136,12 @@ tabContainer.addEventListener('click', function (event) {
 $('#toggleAccordion').on('click', function () {
     let text = $('#toggleAccordion').text();
     if (text === 'Open All') {
+        $(".collapse").collapse("show");
         $(this).text('Close All');
         $(this).removeClass("btn-info border-info")
         $(this).addClass("btn-secondary border-secondary")
     } else {
+        $(".collapse").collapse("hide");
         $(this).text('Open All');
         $(this).removeClass("btn-secondary border-secondary")
         $(this).addClass("btn-info border-info")
