@@ -45,8 +45,15 @@ class TaskManager {
         this.tasks = [];
     }
     addTask(name, description, assignedTo, dueDate, status) {
-        const task = new Task(this.currentId++, name, description, assignedTo, dueDate, status);
-        this.tasks.push(task.returnTask)
+        const task = {
+            id: this.currentId++,
+            name: name,
+            description: description,
+            assignedTo: assignedTo,
+            dueDate: dueDate,
+            status: status
+        }
+        this.tasks.push(task)
     }
     getTaskById(taskId) {
         let foundTask;
