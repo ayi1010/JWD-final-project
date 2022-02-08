@@ -7,8 +7,8 @@ This application utilise many components/classes from the [Bootstrap Library.](h
 Wireframes were created in [Figma](https://figma.com) to illustrate what the task manager could look like.
 Wireframes for both a mobile and desktop version were created to ensure the application is mobile responsive.
 <p>
-  <img src="./img/wireframeMobile.png" height="200" title="mobile-wireframe" alt="mobile-wireframe">
-  <img src="./img/wireframeDesktop.png" height="200" title="desktop-wireframe" alt="desktop-wireframe">
+  <img src="./img/wireframeMobile.png" height="300" title="mobile-wireframe" alt="mobile-wireframe">
+  <img src="./img/wireframeDesktop.png" height="300" title="desktop-wireframe" alt="desktop-wireframe">
 </p>
 
 <h3>Design Principles</h3>
@@ -16,14 +16,18 @@ The design concept was to go with something that was minimalistic, clean and sim
 The colour pallet was also simple with prominent colours used only in call to action areas.
 
 <p>
-  <img src="./img/screenshot.png" width="350" title="mobile-wireframe" alt="mobile-wireframe">
+  <img src="./img/screenshot.png" width="500" title="mobile-wireframe" alt="mobile-wireframe">
 </p>
 
 <h3>Usage</h3>
-1. Clone the repository.
-2. Run `index.html` in your code editor or open it in your browser
-3. Add your first task by clicking the `Add Task` button on the top right.
+<ol>
+    <li>Clone the repository.</li>
+    <li>Run `index.html` in your code editor or open it in your browser</li>
+    <li>Add your first task by clicking the `Add Task` button on the top right.</li>
+</ol>
 
 <h3>To do</h3>
-1. Add unit testing.
-2. Add an edit feature so users can edit a task.
+<ol>
+    <li>Add unit testing.</li>
+    <li>Add an edit feature so users can edit a task.</li>
+</ol>
