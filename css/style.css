@@ -1,3 +1,31 @@
 html {
     overflow-y: scroll;
 }
+
+.flex {
+    display: flex;
+    align-items: center;
+  }
+
+.weatherCard {
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+.city{
+    background: #00000075;
+    color: white;
+    border-radius: 0.25rem;
+    padding:0.5rem;
+}
+
+.weatherCardText {
+    background: #00000075;
+    color: white;
+    border-radius: 0.25rem;
+    padding:0.5rem;
+}
+
+
+
+
