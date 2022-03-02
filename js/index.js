@@ -148,13 +148,32 @@ $('#toggleAccordion').on('click', function () {
     }
 });
 
+// start page
+const startContainer = document.querySelector('#startContainer');
+const btnStart = document.querySelector('#btnStart');
+const navbarContainer = document.querySelector('#navbarContainer')
+const taskContainer = document.querySelector('#taskContainer')
+
+btnStart.addEventListener('click', function (e) {
+    startContainer.classList.add('d-none')
+    startContainer.classList.remove('d-flex')
+    navbarContainer.classList.remove('d-none')
+    taskContainer.classList.remove('d-none')
+
+    const firstNameInput = document.querySelector('#firstNameInput').value
+    if (firstNameInput) {
+        firstName.innerText = firstNameInput
+    }
+
+    search();
+});
+
 // Weather API
 const getWeather = async city => {
     try {
         const apiKey = "92329e9f76cb0a86293be4e3fa64f5c9"
         const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
         const data = res.data
-        console.log(data)
         addWeather(data)
     } catch (e) {
         console.log('Error!', e)
@@ -175,22 +194,15 @@ const addWeather = data => {
         "Humidity: " + humidity + "%";
     document.querySelector(".wind").innerText =
         "Wind speed: " + speed + " km/h";
-    document.querySelector(".weather").classList.remove("loading");
     document.querySelector(".weatherCard").style.backgroundImage =
         "url('https://source.unsplash.com/255x305/?" + name + "')";
 }
 
 function search() {
-    getWeather(document.querySelector(".search-bar").value)
+    getWeather(document.querySelector(".search-city").value)
 }
-document.querySelector(".search button")
-    .addEventListener("click", search);
-document.querySelector(".search-bar")
-    .addEventListener("keyup", function (event) {
-        if (event.key == "Enter") {
-            search();
-        }
-    });
+
+
 
 getWeather("Sydney");
 

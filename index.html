@@ -91,8 +91,34 @@
     </div>
     <!-- Add Task Modal Ends -->
 
+    <!-- Personalisation starts -->
+    <div class="container h-100 d-flex justify-content-center align-items-center" id="startContainer">
+        <div class="card d-flex justify-content-center" style="width: 25rem">
+            <div class="card-body">
+                <h5 class="card-title">Let's make it personal first
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-emoji-wink" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path
+                            d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm1.757-.437a.5.5 0 0 1 .68.194.934.934 0 0 0 .813.493c.339 0 .645-.19.813-.493a.5.5 0 1 1 .874.486A1.934 1.934 0 0 1 10.25 7.75c-.73 0-1.356-.412-1.687-1.007a.5.5 0 0 1 .194-.68z" />
+                    </svg>
+                </h5>
+                <div class="card-text">
+                    <form>
+                        <input type="text" class="form-control mb-2" id="firstNameInput"
+                            placeholder="please enter your first name...">
+                        <input type="text" class="form-control mb-2 search-city"
+                            placeholder="please enter your city name...">
+                        <button type="button" class="btn btn-primary" id="btnStart">Start Planning Your Day!</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Personalisation ends -->
+
     <!-- Navbar Starts -->
-    <nav class="navbar navbar-light bg-light sticky-top">
+    <nav class="navbar navbar-light bg-light sticky-top d-none" id="navbarContainer">
         <div class="container">
             <span id="date-element" class="mr-auto navbar-text border border-secondary rounded p-1">
             </span>
@@ -108,7 +134,7 @@
     </nav>
     <!-- Navbar Ends -->
 
-    <div class="container">
+    <div class="container d-none" id="taskContainer">
         <div class="row">
             <div class="col-md-3 mt-3">
                 <div class="row">
@@ -116,9 +142,9 @@
                     <div class="col-sm-6 col-md-12 d-flex align-self-sm-stretch justify-content-center">
                         <div class="card text-dark bg-light mb-3" style="width: 23rem;">
                             <div class="card-body d-flex align-items-center justify-content-center">
-                                <p class="card-text">Good morning, Elle! <svg xmlns="http://www.w3.org/2000/svg"
-                                        width="16" height="16" fill="currentColor" class="bi bi-emoji-smile"
-                                        viewBox="0 0 16 16">
+                                <p class="card-text">Good morning, <span id="firstName">Stranger</span>! <svg
+                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-emoji-smile" viewBox="0 0 16 16">
                                         <path
                                             d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                                         <path
@@ -132,17 +158,7 @@
                     <!-- Weather API Card Starts -->
                     <div class="col-sm-6 col-md-12 d-flex justify-content-center">
                         <div class="card text-dark bg-light mb-3 weatherCard" style="width: 23rem;">
-                            <div class="card-header input-group search">
-                                <input type="text" class="form-control search-bar" placeholder="Enter City Name...">
-                                <button class="btn btn-sm btn-outline-secondary" type="button"><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-search" viewBox="0 0 16 16">
-                                        <path
-                                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                                    </svg>
-                                </button>
-                            </div>
-                            <div class="card-body weather loading">
+                            <div class="card-body">
                                 <h5 class="card-title city">Weather in Sydney</h5>
                                 <div class="card-text weatherCardText">
                                     <h2 class="temp">51°C</h2>
@@ -240,9 +256,6 @@
             <!-- Task Manager Starts -->
         </div>
     </div>
-
-
-
 
 
     <!-- Optional JavaScript -->
