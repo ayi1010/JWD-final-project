@@ -93,7 +93,7 @@
 
     <!-- Personalisation starts -->
     <div class="container h-100 d-flex justify-content-center align-items-center" id="startContainer">
-        <div class="card d-flex justify-content-center" style="width: 25rem">
+        <div class="card" style="width: 25rem">
             <div class="card-body">
                 <h5 class="card-title">Let's make it personal first
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -109,7 +109,7 @@
                             placeholder="please enter your first name...">
                         <input type="text" class="form-control mb-2 search-city"
                             placeholder="please enter your city name...">
-                        <button type="button" class="btn btn-primary" id="btnStart">Start Planning Your Day!</button>
+                        <button type="button" class="btn btn-primary" id="btnStart">Let's Go!</button>
                     </form>
                 </div>
             </div>
@@ -141,10 +141,20 @@
                     <!-- Personalised Greeting Card Starts -->
                     <div class="col-sm-6 col-md-12 d-flex align-self-sm-stretch justify-content-center">
                         <div class="card text-dark bg-light mb-3" style="width: 23rem;">
+                            <button class="btn btn-sm btn-outline-secondary" id="btnEdit">edit profile <svg
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                    <path
+                                        d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                    <path fill-rule="evenodd"
+                                        d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                                </svg>
+                            </button>
                             <div class="card-body d-flex align-items-center justify-content-center">
-                                <p class="card-text">Good morning, <span id="firstName">Stranger</span>! <svg
-                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-emoji-smile" viewBox="0 0 16 16">
+                                <p class="card-text"><span id="greeting">Hello</span>, <span
+                                        id="firstName">Stranger</span>! <svg xmlns="http://www.w3.org/2000/svg"
+                                        width="16" height="16" fill="currentColor" class="bi bi-emoji-smile"
+                                        viewBox="0 0 16 16">
                                         <path
                                             d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                                         <path
@@ -159,20 +169,21 @@
                     <div class="col-sm-6 col-md-12 d-flex justify-content-center">
                         <div class="card text-dark bg-light mb-3 weatherCard" style="width: 23rem;">
                             <div class="card-body">
-                                <h5 class="card-title city">Weather in Sydney</h5>
+                                <h5 class="card-title city">Loading..</h5>
                                 <div class="card-text weatherCardText">
-                                    <h2 class="temp">51°C</h2>
+                                    <h2 class="temp">Loading..</h2>
                                     <div class="flex">
                                         <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon" />
-                                        <div class="description">Cloudy</div>
+                                        <div class="description">Loading..</div>
                                     </div>
-                                    <div class="humidity">Humidity: 60%</div>
-                                    <div class="wind">Wind speed: 6.2 km/h</div>
+                                    <div class="humidity">Humidity: Loading..</div>
+                                    <div class="wind">Wind speed: Loading..</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- Weather API Card Ends -->
+
                 </div>
             </div>
 
@@ -271,6 +282,8 @@
         crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/getWeatherAPI.js"></script>
+    <script src="js/profileManager.js"></script>
     <script src="js/taskManager.js"></script>
     <script src="js/index.js"></script>
 </body>
