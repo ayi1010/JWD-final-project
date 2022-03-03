@@ -51,4 +51,8 @@ html, body{
     }
 }
 
-
+#date-element {
+    background: #00000075;
+    color: white;
+    border: none;
+}
