@@ -1,3 +1,8 @@
+//Initiate, load and render the weather
+const profileManager = new ProfileManager('Stranger', 'Sydney');
+profileManager.load()
+profileManager.render()
+
 //Initiate, load and render the data
 const taskManager = new TaskManager();
 taskManager.load()
@@ -147,9 +152,6 @@ $('#toggleAccordion').on('click', function () {
         $(this).addClass("btn-info border-info")
     }
 });
-
-
-
 
 
 

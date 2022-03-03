@@ -1,3 +1,54 @@
 html {
     overflow-y: scroll;
 }
+
+html, body{
+    height:100%;
+    width:100%;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+.weatherCard {
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+.city{
+    background: #00000075;
+    color: white;
+    border-radius: 0.25rem;
+    padding:0.5rem;
+}
+
+.weatherCardText {
+    background: #00000075;
+    color: white;
+    border-radius: 0.25rem;
+    padding:0.5rem;
+}
+
+@media (max-width: 767.98px) {
+    .humidity, .wind {
+        display: none
+    }
+    .city {
+        font-size: 15px;
+    }
+    .temp {
+        font-size: 20px;
+    }
+    .flex {
+        font-size: 15px;
+    }
+    .weatherCardText{
+        display:flex;
+        align-items: center;
+    }
+}
+
+
