@@ -3,17 +3,12 @@ class ProfileManager {
         this.name = name;
         this.location = location;
     }
-    add(name, location) {
-        this.name = name;
-        this.location = location;
-    }
     delete() {
         localStorage.setItem("name", "")
         localStorage.setItem("location", "")
     }
     save() {
         const name = JSON.stringify(this.name)
-
         localStorage.setItem("name", name)
         const location = JSON.stringify(this.location)
         localStorage.setItem("location", location)
