@@ -75,27 +75,6 @@ class ProfileManager {
     }
 }
 
-const btnStart = document.querySelector('#btnStart');
-btnStart.addEventListener('click', function () {
-    let firstNameInput = document.querySelector('#firstNameInput').value
-    if (firstNameInput) {
-        profileManager.name = firstNameInput
-    }
-    let cityInput = document.querySelector('.search-city').value
-    if (cityInput) {
-        profileManager.location = cityInput
-    }
-    displayManager()
-    profileManager.render()
-    profileManager.save()
-})
-
-const btn = document.querySelector('#btnEdit');
-btn.addEventListener('click', function () {
-    profileManager.delete()
-    hideManager()
-})
-
 function displayManager() {
     const startContainer = document.querySelector('#startContainer');
     const navbarContainer = document.querySelector('#navbarContainer')
