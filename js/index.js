@@ -153,5 +153,25 @@ $('#toggleAccordion').on('click', function () {
     }
 });
 
+// start button
+const btnStart = document.querySelector('#btnStart');
+btnStart.addEventListener('click', function () {
+    let firstNameInput = document.querySelector('#firstNameInput').value
+    if (firstNameInput) {
+        profileManager.name = firstNameInput
+    }
+    let cityInput = document.querySelector('.search-city').value
+    if (cityInput) {
+        profileManager.location = cityInput
+    }
+    displayManager()
+    profileManager.render()
+    profileManager.save()
+})
 
-
+// edit profile button
+const btn = document.querySelector('#btnEdit');
+btn.addEventListener('click', function () {
+    profileManager.delete()
+    hideManager()
+})
