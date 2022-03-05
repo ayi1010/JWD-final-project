@@ -1,26 +1,18 @@
 const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
     const html = `
         <div data-task-id="${id}">
-            <a href="#task${id}" data-parent="#accordion" data-toggle="collapse" class="list-group-item d-flex text-decoration-none">
-                <h6 class="flex-grow-1">Task: ${name}</h6>
+            <a href="#task${id}" data-parent="#accordion" data-toggle="collapse" class="list-group-item d-flex text-decoration-none card-bg accordion-header">
+                <h6 class="flex-grow-1 text-light accordion-text">Task: ${name}</h6>
             </a>
             <div class="collapse" id="task${id}">
-                <div class="card h-100">
+                <div class="card h-100 card-bg text-light">
                     <div class="card-body">
-                        <p class="card-text">
-                            <ul class="list-group-item-text">
-                                <li class="font-weight-bold">Description</li>
-                                <p>${description}</p>
-                                <li class="font-weight-bold">Assign To</li>
-                                <p>${assignedTo}</p>
-                                <li class="font-weight-bold">Due Date</li>
-                                <p>${dueDate}</p>
-                                <li class="font-weight-bold">Status</li>
-                                <p class="${status === "DONE" ? 'text-danger' : status === "IN PROGRESS" ? 'text-warning' : 'text-primary'}">${status}</p>
-                            </ul>
-                        </p>
+                    <h5 class="card-title">${assignedTo}</h5>	
+                    <h6 class="card-subtitle mb-2">${dueDate}</h6>	
+                    <p class="card-text">${description}</p>	
+                     <p class="${status === "DONE" ? 'text-danger' : status === "IN PROGRESS" ? 'text-warning' : 'text-primary'} card-text">${status}</p>
                         <div class="d-flex justify-content-end">
-                            <button type="button" class="btn btn-success btn-sm done-button mr-1  ${(status === "DONE") ? "invisible" : "visible"}">Mark as Done</button>
+                            <button type="button" class="btn btn-primary btn-sm done-button mr-1  ${(status === "DONE") ? "invisible" : "visible"}">Mark as Done</button>
                             <button type="button" class="btn btn-danger btn-sm delete-button">DELETE</button>
                         </div>
                     </div>

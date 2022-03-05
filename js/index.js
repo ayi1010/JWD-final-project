@@ -175,3 +175,10 @@ btn.addEventListener('click', function () {
     profileManager.delete()
     hideManager()
 })
+
+// edit profile button	
+const btnBg = document.querySelector('#bgEdit');
+btnBg.addEventListener('click', function () {
+    const { location } = profileManager.getProfile();
+    setBackground(location);
+})

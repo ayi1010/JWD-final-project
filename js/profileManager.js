@@ -3,6 +3,12 @@ class ProfileManager {
         this.name = name;
         this.location = location;
     }
+    getProfile() {
+        return {
+            name: this.name,
+            location: this.location,
+        }
+    }
     delete() {
         localStorage.setItem("name", "")
         localStorage.setItem("location", "")
@@ -28,7 +34,7 @@ class ProfileManager {
     }
     async render() {
         let firstName = document.querySelector('#firstName')
-        firstName.innerText = this.name
+        firstName.innerText = `${this.name} :-)`
 
         const data = await getWeather(this.location)
         try {
@@ -46,8 +52,7 @@ class ProfileManager {
                 "Humidity: " + humidity + "%";
             document.querySelector(".wind").innerText =
                 "Wind speed: " + speed + " km/h";
-            document.querySelector(".weatherCard").style.backgroundImage =
-                "url('https://source.unsplash.com/255x305/?" + name + "')";
+            setBackground(name)
         }
         catch {
             document.querySelector(".city").innerText = "No Data"
@@ -95,4 +100,11 @@ function hideManager() {
     startContainer.classList.add('d-flex')
     navbarContainer.classList.add('d-none')
     taskContainer.classList.add('d-none')
+}
+
+function setBackground(location) {
+    const date = new Date();
+    document.body.style.background =
+        "url('https://source.unsplash.com/1920x1080/?" + location + "?" + date.getTime() + "') no-repeat center center fixed";
+    document.body.style.backgroundSize = "cover";
 }
