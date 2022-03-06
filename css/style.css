@@ -6,10 +6,25 @@ html, body{
     height:100%;
     width:100%;
 }
+	
+/*Override bootstrap background light*/	
+.bg-light {	
+    /*background-color: rgba(29,29,30,0.5) !important;*/	
+    background-color: rgba(255,255,255,0.4) !important;	
+}	
+/*Override bootstrap nav link active*/	
+.nav-link.active {	
+    background-color: #18a2b8 !important;	
+    border-color: transparent !important;	
+}	
+.nav-tabs {	
+    border-bottom-color: transparent;	
+}
 
 .flex {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
   }
 
@@ -19,17 +34,14 @@ html, body{
 }
 
 .city{
-    background: #00000075;
     color: white;
     border-radius: 0.25rem;
     padding:0.5rem;
 }
 
 .weatherCardText {
-    background: #00000075;
     color: white;
-    border-radius: 0.25rem;
-    padding:0.5rem;
+    text-align: center;
 }
 
 @media (max-width: 767.98px) {
@@ -45,13 +57,36 @@ html, body{
     .flex {
         font-size: 15px;
     }
+    #firstName {
+        font-size: 20px;
+    }
     .weatherCardText{
         display:flex;
         align-items: center;
     }
 }
 
+.card-bg {	
+    background: rgba(0,0,0,0.8);	
+    color: white
+}
+
 #date-element {
-    background: #00000075;
-    color: white;
+ background: rgba(0,0,0,0.5);
+ color: white;
+}
+
+	
+.accordion-header {	
+    border-bottom-color: rgba(255,255,255,0.6);	
+    border-top-color: rgba(255,255,255,0.6);	
+}	
+.accordion-text:hover {	
+    color: #18a2b8 !important;	
+}	
+.firstTab {	
+    border-top-left-radius: .25rem;	
+}	
+.lastTab {	
+    border-top-right-radius: .25rem;	
 }
