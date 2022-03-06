@@ -176,7 +176,7 @@ btn.addEventListener('click', function () {
     hideManager()
 })
 
-// edit profile button	
+// change background button	
 const btnBg = document.querySelector('#bgEdit');
 btnBg.addEventListener('click', function () {
     const { location } = profileManager.getProfile();
