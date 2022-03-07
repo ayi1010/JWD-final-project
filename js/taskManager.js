@@ -156,8 +156,8 @@ class TaskManager {
         }
     }
 }
-
 module.exports = {
-    TaskManager
-}
+    TaskManager,
+    createTaskHtml
+};
 
