@@ -9,8 +9,6 @@ const fs = require('fs')
 const path = require('path')
 const html = fs.readFileSync(path.resolve(__dirname, '../index.html'), 'utf8');
 
-// const { window } = new JSDOM(`html`, { url: "http://localhost" })
-
 // test TaskManager constructor
 describe('TaskManager', () => {
   let dom;
@@ -135,7 +133,7 @@ describe('TaskManager', () => {
         taskManager.save();
 
         // check if localStorage was called first with the tasks key and the json
-        assert.deepEqual(localStorageSpy.firstCall.args, ['tasks', tasksJson]);
+        assert.deepStrictEqual(localStorageSpy.firstCall.args, ['tasks', tasksJson]);
       });
 
       it('should store the currentId in local storage', () => {
@@ -153,7 +151,7 @@ describe('TaskManager', () => {
         const currentId = new String(taskManager.currentId);
 
         // check if localStorage was called last with the currentId key and the currentId
-        assert.deepEqual(localStorageSpy.lastCall.args, ['currentId', currentId]);
+        assert.deepStrictEqual(localStorageSpy.lastCall.args, ['currentId', currentId]);
       });
     });
   });
@@ -184,7 +182,7 @@ describe('TaskManager', () => {
         // call load
         taskManager.load();
 
-        assert.deepEqual(taskManager.tasks, tasks);
+        assert.deepStrictEqual(taskManager.tasks, tasks);
       });
     });
     describe('when the currentId is saved in localStorage', () => {
@@ -197,7 +195,7 @@ describe('TaskManager', () => {
         // call load
         taskManager.load();
         const id = new Number('1')
-        expect(taskManager.currentId).to.deep.equal(id);
+        assert.deepStrictEqual(taskManager.currentId, id);
       });
     });
   });
@@ -252,7 +250,7 @@ describe('TaskManager', () => {
 
         const toDoTasksList = document.getElementById('toDoList');
         // test taskList html has rendered correctly
-        expect(toDoTasksList.innerHTML).to.equal(todoTaskHtml)
+        assert.strictEqual(toDoTasksList.innerHTML, todoTaskHtml)
       });
     });
   });
