@@ -9,7 +9,6 @@ html, body{
 	
 /*Override bootstrap background light*/	
 .bg-light {	
-    /*background-color: rgba(29,29,30,0.5) !important;*/	
     background-color: rgba(255,255,255,0.4) !important;	
 }	
 /*Override bootstrap nav link active*/	
@@ -75,7 +74,6 @@ html, body{
  background: rgba(0,0,0,0.5);
  color: white;
 }
-
 	
 .accordion-header {	
     border-bottom-color: rgba(255,255,255,0.6);	
