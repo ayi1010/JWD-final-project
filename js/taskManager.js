@@ -156,8 +156,15 @@ class TaskManager {
         }
     }
 }
-module.exports = {
-    TaskManager,
-    createTaskHtml
-};
+try {
+    module.exports = {
+        TaskManager,
+        createTaskHtml
+    }
+} catch (e) { }
+
+// module.exports = {
+//     TaskManager,
+//     createTaskHtml
+// };
 
