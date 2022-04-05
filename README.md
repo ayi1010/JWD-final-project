@@ -32,6 +32,6 @@ The colour pallet was also simple with prominent colours used only in call to ac
 <h3>To do</h3>
 <ul>
     <li>[x] Add Weather API</li>
-    <li>[x] MarsAdd unit testing </li>
+    <li>[x] Add unit testing </li>
     <li>[ ] Add an edit feature so users can edit a task.</li>
 </ul>
