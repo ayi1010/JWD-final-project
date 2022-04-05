@@ -1,11 +1,12 @@
-<h1>ToDo Application</h1>
+<h1>Task Manager Application</h1>
 
-This is a simple to-do task manager built for the Generation Australia JWD final project.
+This is a simple task manager built for the Generation Australia JWD final project.
 This application utilise many components/classes from the [Bootstrap Library.](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
 
 You can see the website by clicking [here.](https://ayi1010.github.io/jwd-final-project/)
 
 <h3>Wireframe</h3>
+
 Wireframes were created in [Figma](https://figma.com) to illustrate what the task manager could look like.
 Wireframes for both a mobile and desktop version were created to ensure the application is mobile responsive.
 <p>
@@ -29,7 +30,8 @@ The colour pallet was also simple with prominent colours used only in call to ac
 </ol>
 
 <h3>To do</h3>
-<ol>
-    <li>Add unit testing.</li>
-    <li>Add an edit feature so users can edit a task.</li>
-</ol>
+<ul>
+    <li>[x] Add Weather API</li>
+    <li>[x] MarsAdd unit testing </li>
+    <li>[ ] Add an edit feature so users can edit a task.</li>
+</ul>
