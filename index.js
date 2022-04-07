@@ -9,8 +9,9 @@ const [day, month, year] = [today.getDate(), today.getMonth() +1, today.getFullY
 let dateString = `Current Date: ${day} / ${month} / ${year}`;
 dateElement.innerHTML = dateString;
 // validation
-const form = document.querySelector("#new-task-form", "#editTaskModal");
+const form = document.querySelector("#new-task-form");
 //const form = document.querySelector("#editTaskModal");
+//const editTaskForm = document.querySelector('#editToDo');
 
 
 form.addEventListener("submit", (event) => {
@@ -36,7 +37,7 @@ form.addEventListener("submit", (event) => {
       validateDueDate.classList.remove("is-valid");
     };
   
-  //event.stopPropagation();
+  event.stopPropagation();
   console.log("Task Name :" + validateName.value.length);
   console.log("Task Description :" + validateDescription.value.length);
   console.log("Task Assigned To :" + validateAssignedTo.value.length);
